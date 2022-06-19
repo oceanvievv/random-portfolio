@@ -12,6 +12,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@js': path.resolve(__dirname, 'src/js'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
+    }
+  },
+  devServer: {
+    port: 8080,
+  },
   plugins: [
     new HTMLWebpackPlugin({
       title: "Portfolio",
@@ -30,6 +42,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpeg|jpg)$/,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
         type: 'asset/resource'
       },
     ]

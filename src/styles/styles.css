@@ -1,7 +1,9 @@
 @import "montserrat.css";
+@import "~normalize.css";
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: black;
 }
 
 p {
