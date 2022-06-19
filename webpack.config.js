@@ -21,8 +21,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.pug&/
-      }
+        test: /\.pug$/,
+        use: 'pug-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpeg|jpg)$/,
+        type: 'asset/resource'
+      },
     ]
   }
 }
