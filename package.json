@@ -9,7 +9,9 @@
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
-  "browserslist": ["> 0.25%, not dead"],
+  "browserslist": [
+    "> 0.25%, not dead"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -34,6 +36,7 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "modern-css-reset": "^1.4.0",
     "normalize.css": "^8.0.1"
   }
 }
