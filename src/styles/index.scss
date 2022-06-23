@@ -3,13 +3,24 @@
 
 @import "@styles/fonts/montserrat.scss";
 
-@import "@styles/consts/colors.scss";
+@import "@styles/consts/consts";
+@import "@styles/base/container.scss";
+@import "@styles/base/responsive.scss";
+
+@import "components/components.scss";
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
+  font-family: "MontserratMedium", sans-serif;
+
+  color: $base-text-color;
 
   background-color: $background-color-light-gray;
+
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 1110px) {
+  body {
+    margin-top: 40px;
+  }
 }

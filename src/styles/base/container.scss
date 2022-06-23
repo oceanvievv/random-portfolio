@@ -14,5 +14,14 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+
+    @media screen and (max-width: 1110px) {
+      padding: 0 40px;
+
+      @media screen and (max-width: 947px) {
+        flex-direction: row;
+        align-items: unset;
+      }
+    }
   }
 }
