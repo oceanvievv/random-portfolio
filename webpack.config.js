@@ -59,6 +59,7 @@ module.exports = {
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons'),
     }
   },
   devServer: {
@@ -78,7 +79,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist')
+          to: path.resolve(__dirname, 'dist/assets/')
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/icons'),
+          to: path.resolve(__dirname, 'dist/assets/icons')
         }
       ]
     }),
@@ -101,7 +106,7 @@ module.exports = {
         use: cssLoaders('sass-loader')
       },
       {
-        test: /\.(png|jpeg|jpg)$/,
+        test: /\.(png|jpeg|jpg|svg)$/,
         type: 'asset/resource'
       },
       {
