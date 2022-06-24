@@ -1,0 +1,7 @@
+- const skills = [{title: 'React', value: '60%'}, {title: 'Javascript', value: '80%'}, {title: 'CSS', value: '90%'}, {title: 'Vue', value: '60%'}, {title: 'Redux', value: '80%'}, {title: 'React Native', value: '90%'}]
+
+for skill in skills
+  .hard-skills__skill
+    .skill__title #{skill.title}
+    .skill__progress-bar-wrapper
+      .skill__progress-bar(style={width: skill.value})

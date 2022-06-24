@@ -1,0 +1,39 @@
+@import "skill";
+
+.hard-skills-wrapper {
+  width: 100%;
+  max-width: 415px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 17px;
+
+  padding: 25px;
+  border-radius: $section-container-radius;
+  box-sizing: border-box;
+
+  background-color: $background-color-white;
+  position: relative;
+
+  //@media screen and (max-width: 947px) {
+  //  max-width: 395px;
+  //
+  //  flex-direction: column;
+  //
+  //  gap: 23px;
+  //}
+}
+.hard-skills__title {
+  font-family: 'MontserratBold', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+}
+.hard-skills__skill {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  gap: 20px;
+}
