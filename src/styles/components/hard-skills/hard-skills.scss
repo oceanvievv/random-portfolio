@@ -16,13 +16,9 @@
   background-color: $background-color-white;
   position: relative;
 
-  //@media screen and (max-width: 947px) {
-  //  max-width: 395px;
-  //
-  //  flex-direction: column;
-  //
-  //  gap: 23px;
-  //}
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 .hard-skills__title {
   font-family: 'MontserratBold', sans-serif;

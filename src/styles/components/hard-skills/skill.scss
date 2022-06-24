@@ -3,6 +3,10 @@
 
   font-size: 16px;
   line-height: 20px;
+
+  @media screen and (max-width: 768px) {
+    min-width: 20%;
+  }
 }
 .skill__progress-bar-wrapper {
   width: 100%;

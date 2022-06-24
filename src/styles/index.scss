@@ -17,10 +17,15 @@ body {
   background-color: $background-color-light-gray;
 
   margin-top: 70px;
-}
 
-@media screen and (max-width: 1110px) {
-  body {
+  @media screen and (max-width: 1110px) {
     margin-top: 40px;
+
+    @media screen and (max-width: 375px) {
+      margin-top: 20px;
+    }
   }
+}
+.person-profile__sections {
+  display: grid;
 }

@@ -12,9 +12,10 @@
   position: relative;
 
   @media screen and (max-width: 947px) {
-      max-width: 395px;
+      max-width: 100%;
 
       flex-direction: column;
+      align-items: center;
 
       gap: 23px;
   }
@@ -54,6 +55,7 @@
 
   @media screen and (max-width: 947px) {
     flex-direction: column;
+    align-items: center;
 
     gap: 30px;
   }
@@ -127,6 +129,12 @@
   }
 
   @media screen and (max-width: 947px) {
+    p {
+      width: 100%;
+
+      text-align: center;
+    }
+
     p:not(:first-child) {
       display: none;
     }
