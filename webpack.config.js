@@ -84,6 +84,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/assets/icons'),
           to: path.resolve(__dirname, 'dist/assets/icons')
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/assets/images')
         }
       ]
     }),
@@ -104,10 +108,6 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: cssLoaders('sass-loader')
-      },
-      {
-        test: /\.(png|jpeg|jpg|svg)$/,
-        type: 'asset/resource'
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,

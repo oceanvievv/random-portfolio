@@ -1,9 +1,6 @@
 @import "skill";
 
 .hard-skills-wrapper {
-  width: 100%;
-  max-width: 415px;
-
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -15,10 +12,6 @@
 
   background-color: $background-color-white;
   position: relative;
-
-  @media screen and (max-width: 768px) {
-    max-width: 100%;
-  }
 }
 .hard-skills__title {
   font-family: 'MontserratBold', sans-serif;

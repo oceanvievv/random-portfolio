@@ -20,19 +20,22 @@
     @media screen and (max-width: 1110px) {
       padding: 0 40px;
 
-      @media screen and (max-width: 947px) {
-        flex-direction: row;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
         align-items: unset;
 
-        @media screen and (max-width: 768px) {
-          flex-direction: column;
-          align-items: unset;
-
-          @media screen and (max-width: 375px) {
-            padding: 0 20px;
-          }
+        @media screen and (max-width: 375px) {
+          padding: 0 20px;
         }
       }
     }
   }
+}
+.person-additional-info {
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 415px 1fr;
+  grid-gap: 42px 35px;
 }
