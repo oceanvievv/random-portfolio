@@ -1,6 +1,8 @@
 @import "skill";
 
 .hard-skills-wrapper {
+  grid-area: skills;
+
   display: flex;
   flex-direction: column;
   align-self: flex-start;

@@ -1,0 +1,27 @@
+-
+  const hobbies = [
+    {
+      title: 'Gaming',
+      descr: 'Quisque feugiat malesuada molestie.',
+      imgLink: 'assets/images/gaming.png'
+    },
+    {
+      title: 'Cooking',
+      descr: 'Quisque feugiat malesuada molestie.',
+      imgLink: 'assets/images/cooking.jpg'
+    },
+    {
+      title: 'Biking',
+      descr: 'Quisque feugiat malesuada molestie.',
+      imgLink: 'assets/images/biking.jpeg'
+    }
+  ]
+
+.hobbies-section-wrapper.bottom-middle-shadow
+  .hobbies-section__title Hobbies
+  for hobby in hobbies
+    .hobby-wrapper
+      .hobby__image-wrapper
+        img(src=hobby.imgLink)
+      .hobby__title=hobby.title
+      .hobby__descr=hobby.descr
