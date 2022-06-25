@@ -13,6 +13,10 @@
 
   background-color: $background-color-white;
   position: relative;
+
+  @media screen and (max-width: 425px) {
+    padding: 17px 22px 36px 22px;
+  }
 }
 .experiences-section__title {
   font-family: 'MontserratMedium', sans-serif;
@@ -43,12 +47,22 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (max-width: 425px) {
+      align-items: flex-start;
+
+      margin-top: 8px;
+    }
+
     img {
       width: 100%;
       max-width: 80px;
       height: 100%;
 
       object-fit: contain;
+
+      @media screen and (max-width: 425px) {
+        height: unset;
+      }
     }
   }
   .experience__info {
