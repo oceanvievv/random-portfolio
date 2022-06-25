@@ -34,12 +34,29 @@
 .person-additional-info {
   width: 100%;
 
-  display: grid;
-  grid-template-columns: 40% calc(60% - 35px);
-  grid-gap: 42px 35px;
+  display: flex;
+  flex-direction: row;
 
-  grid-template-areas:
-          "skills articles"
-          "hobbies articles"
-          "hobbies expiriences";
+  gap: 35px;
+
+  @media screen and (max-width: 947px) {
+    flex-direction: column;
+
+    //TODO: Fix gap 35/42
+    //gap: unset;
+  }
+}
+.info__left-column, .info__right-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 42px;
+}
+.info__left-column {
+  width: 100%;
+  max-width: 415px;
+
+  @media screen and (max-width: 947px) {
+    max-width: 100%;
+  }
 }

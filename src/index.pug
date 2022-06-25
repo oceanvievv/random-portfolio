@@ -14,6 +14,9 @@ html(lang="en")
       .content-wrapper
         include components/person-profile/person-profile
         .person-additional-info
-          include components/hard-skills/hard-skills
-          include components/articles/articles
-          include components/hobbies/hobbies
+          .info__left-column
+            include components/hard-skills/hard-skills
+            include components/hobbies/hobbies
+          .info__right-column
+            include components/articles/articles
+            include components/experiences/experiences

@@ -19,9 +19,10 @@
 
 .hobbies-section-wrapper.bottom-middle-shadow
   .hobbies-section__title Hobbies
-  for hobby in hobbies
-    .hobby-wrapper
-      .hobby__image-wrapper
-        img(src=hobby.imgLink)
-      .hobby__title=hobby.title
-      .hobby__descr=hobby.descr
+  .hobbies-wrapper
+    for hobby in hobbies
+      .hobby-wrapper
+        .hobby__image-wrapper
+          img(src=hobby.imgLink)
+        .hobby__title=hobby.title
+        .hobby__descr=hobby.descr
