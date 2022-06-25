@@ -1,7 +1,7 @@
 @import "skill";
 
 .hard-skills-wrapper {
-  grid-area: skills;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -19,12 +19,48 @@
   font-family: 'MontserratBold', sans-serif;
   font-size: 18px;
   line-height: 22px;
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+}
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 21px;
+
+  @media screen and (max-width: 947px) {
+    justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      justify-content: unset;
+
+      align-items: center;
+    }
+  }
 }
 .hard-skills__skill {
+  width: 100%;
+  max-width: 345px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 
   gap: 20px;
+
+  @media screen and (max-width: 947px) {
+    max-width: unset;
+
+    width: 45%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      max-width: 345px;
+    }
+  }
 }

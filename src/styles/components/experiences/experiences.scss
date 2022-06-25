@@ -1,0 +1,88 @@
+.experiences-section-wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+
+  gap: 44px;
+
+  padding: 17px 31px 33px 31px;
+  border-radius: $section-container-radius;
+  box-sizing: border-box;
+
+  background-color: $background-color-white;
+  position: relative;
+}
+.experiences-section__title {
+  font-family: 'MontserratMedium', sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: $base-text-color;
+}
+.experiences-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 36px;
+}
+.experience-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  gap: 17px;
+
+  .experience__image-wrapper {
+    width: 100%;
+    max-width: 120px;
+    height: 84px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 80px;
+      height: 100%;
+
+      object-fit: contain;
+    }
+  }
+  .experience__info {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 3px;
+
+    .experience__date {
+      font-family: 'MontserratMedium', sans-serif;
+      font-size: 14px;
+      line-height: 17px;
+
+      color: $section-text-color;
+
+      margin-bottom: 12px;
+    }
+
+    .experience__position, .experience__descr {
+      font-family: 'MontserratSemiBold', sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+
+      color: $section-title-color;
+
+      margin-bottom: 33px;
+    }
+
+    .experience__descr {
+      font-family: 'MontserratMedium', sans-serif;
+
+      color: $section-text-color;
+
+      margin-bottom: unset;
+    }
+  }
+}

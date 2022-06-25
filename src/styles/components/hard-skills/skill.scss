@@ -1,11 +1,19 @@
 .skill__title {
-  min-width: 30%;
+  display: block;
 
   font-size: 16px;
   line-height: 20px;
 
-  @media screen and (max-width: 768px) {
-    min-width: 20%;
+  min-width: 30%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media screen and (max-width: 375px) {
+    overflow: unset;
+    white-space: unset;
+    text-overflow: unset;
   }
 }
 .skill__progress-bar-wrapper {

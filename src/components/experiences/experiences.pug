@@ -1,0 +1,29 @@
+-
+  const exps = [
+    {
+      dateFrom: 'Feb 2017',
+      dateTo: 'Current',
+      position: 'Front-end developer',
+      descr: 'Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.',
+      imgLink: 'assets/images/Adidas_Logo.svg'
+    },
+    {
+      dateFrom: 'Aug 2016',
+      dateTo: 'Feb 2018',
+      position: 'Full-stack developer',
+      descr: 'Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.',
+      imgLink: 'assets/images/H&M-Logo.svg'
+    }
+  ];
+
+.experiences-section-wrapper.bottom-middle-shadow
+  .experiences-section__title Experiences
+  .experiences-wrapper
+    for exp in exps
+      .experience-wrapper
+        .experience__image-wrapper
+          img(src=exp.imgLink)
+        .experience__info
+          .experience__date=`${exp.dateFrom} - ${exp.dateTo}`
+          .experience__position=exp.position
+          .experience__descr=exp.descr
