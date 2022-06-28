@@ -1,0 +1,33 @@
+@import "filterButton";
+
+.projects-section-wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 36px;
+}
+.projects-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding: 22px;
+  border-radius: $section-container-radius;
+  box-sizing: border-box;
+
+  background-color: $background-color-white;
+
+  .projects-nav__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .projects-nav__filters-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    gap: 16px;
+  }
+}

@@ -60,7 +60,8 @@ module.exports = {
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
       '@icons': path.resolve(__dirname, 'src/assets/icons'),
-    }
+    },
+    extensions: ['.js']
   },
   devServer: {
     port: 8080,
@@ -99,7 +100,7 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        use: 'pug-loader',
+        use: 'pug-loader'
       },
       {
         test: /\.css$/,
