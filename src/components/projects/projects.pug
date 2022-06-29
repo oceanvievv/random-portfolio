@@ -1,8 +1,59 @@
+-
+  const projects = []
+  const baseDescr = 'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io';
+  const baseDemoLink = 'https://oceanvievv.github.io/random-404-page/'
+  const baseRepoLink = 'https://github.com/oceanvievv/random-404-page'
+  const allTags = []
+
+  class Project {
+    constructor(imgLink, tags = [], title, descr, demoLink, repoLink) {
+      this.imgLink = imgLink
+      this.tags = this.handleTags(tags)
+      this.title = title
+      this.descr = descr
+      this.demoLink = demoLink
+      this.repoLink = repoLink
+    }
+
+    handleTags(tags) {
+      allTags.push(...this.getFirstLetterUpperCaseTags(tags))
+
+      return this.getTagsWithHash(tags)
+    }
+
+    getTagsWithHash(tags) {
+      const formattedTags = tags.map(tag => tag = '#' + tag)
+
+      return formattedTags
+    }
+
+    getFirstLetterUpperCaseTags(tags) {
+      const formattedTags = tags.map(tag => tag = capitalizeFirstLetter(tag))
+
+      function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+      }
+
+      return formattedTags
+    }
+  }
+
+  projects.push(new Project('assets/images/404_screen.png', ['HTML', 'CSS', 'responsive'], '404 Not Found', baseDescr, baseDemoLink, baseRepoLink))
+
+  function getUniqueTags(allTags) {
+    return allTags.filter((v, i, a) => a.indexOf(v) === i)
+  }
+
+  const uniqueTags = getUniqueTags(allTags)
+
+include mixins/projectsFilterButton
+include mixins/projectsItem
+
 .projects-section-wrapper
   .projects-nav
-    .projects-nav__title
+    .projects-nav__title Projects (#{projects.length})
     .projects-nav__filters-wrapper
-      include projectsButton
-
-script(type='text/javascript')
-  include ../../js/projects/projects.js
+      for tag in uniqueTags
+        +filterButton(tag)
+.projects-wrapper
+  +projectsItem(projects[0])

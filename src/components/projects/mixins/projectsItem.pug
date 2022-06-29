@@ -1,0 +1,10 @@
+mixin projectsItem(project)
+  .project-wrapper.bottom-middle-shadow
+    .project__image-wrapper
+      img(src=`${project.imgLink}`)
+    .project__info
+    .project__tags
+      for tag in project.tags
+        .project__tag=tag
+    .project__title=project.title
+    .project__descr=project.descr
