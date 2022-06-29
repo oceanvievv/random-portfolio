@@ -1,11 +1,13 @@
-(function buttonHandler() {
-  let button = document.getElementById("filterButton")
+(function buttonsHandler() {
+  const buttons = document.getElementsByClassName("projects-nav__filter");
 
-  button.addEventListener('mousemove', (e) => {
-    let x = e.offsetX
-    let y = e.offsetY
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('mousemove', (e) => {
+      let x = e.offsetX
+      let y = e.offsetY
 
-    button.style.setProperty('--mouse-x', x + "px")
-    button.style.setProperty('--mouse-y', y + "px")
-  })
+      buttons[i].style.setProperty('--mouse-x', x + "px")
+      buttons[i].style.setProperty('--mouse-y', y + "px")
+    })
+  }
 })()
