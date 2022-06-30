@@ -1,0 +1,47 @@
+.project__link-button {
+  font-size: 18px;
+  padding: 10px 40px;
+  background: $background-color-white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  border: 1px solid $button-border-color-base;
+  border-radius: $button-container-radius-m;
+  cursor: pointer;
+  user-select: none;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(white,.1);
+    border-radius: 100%;
+    transition: width .3s ease, height .3s ease;
+  }
+  &:focus,
+  &:hover {
+    background: $background-color-blue;
+    color: $button-text-color-white;
+    border: 1px solid transparent;
+  }
+  &:active {
+    &:after {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+.active-link-button {
+  background: $background-color-blue;
+  border-color: transparent;
+  color: white;
+}
+.code-link-button {
+  color: $button-text-color-blue;
+  border-color: $button-border-color-blue;
+}

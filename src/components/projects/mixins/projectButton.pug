@@ -1,0 +1,5 @@
+mixin projectButton(title, coloured, link)
+  if coloured
+    a(class="project__link-button active-link-button" href=link target="_blank")=title
+  else
+    a(class="project__link-button code-link-button" href=link target="_blank")=title

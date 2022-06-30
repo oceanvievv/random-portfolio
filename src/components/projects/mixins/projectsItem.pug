@@ -1,3 +1,5 @@
+include projectButton
+
 mixin projectsItem(project)
   .project-wrapper.bottom-middle-shadow
     .project__image-wrapper
@@ -8,3 +10,6 @@ mixin projectsItem(project)
         .project__tag=tag
     .project__title=project.title
     .project__descr=project.descr
+    .project__links
+      +projectButton('Demo', true, project.demoLink)
+      +projectButton('Code', false, project.repoLink)
