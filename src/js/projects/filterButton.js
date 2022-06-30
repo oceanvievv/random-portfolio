@@ -1,5 +1,7 @@
 (function buttonsHandler() {
-  const buttons = document.getElementsByClassName("projects-nav__filter");
+  const filterButtons = document.getElementsByClassName("projects-nav__filter")
+  const projectButtons = document.getElementsByClassName("project__link-button")
+  const buttons = [...filterButtons, ...projectButtons]
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('mousemove', (e) => {
