@@ -23,7 +23,6 @@
     border-radius: 100%;
     transition: width .3s ease, height .3s ease;
   }
-  &:focus,
   &:hover {
     background: $background-color-blue;
     color: $button-text-color-white;

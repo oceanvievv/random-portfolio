@@ -17,6 +17,12 @@
   aspect-ratio: 292 / 217;
 
   margin-bottom: 24px;
+
+  border-radius: $image-container-radius;
+
+  img {
+    border-radius: $image-container-radius;
+  }
 }
 .project__info {
   width: 100%;

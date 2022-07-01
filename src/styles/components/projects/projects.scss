@@ -1,5 +1,6 @@
 @import "filterButton";
 @import "projectButton";
+@import "pagination-arrows";
 @import "project.scss";
 
 .projects-section-wrapper {
@@ -9,6 +10,8 @@
   flex-direction: column;
 
   gap: 36px;
+
+  margin-bottom: 147px;
 }
 .projects-nav {
   display: flex;
@@ -37,7 +40,20 @@
   width: 100%;
 
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
 
   justify-content: space-between;
+}
+.projects-pagination {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.projects-pagination__controls {
+  display: flex;
+  flex-flow: row nowrap;
+
+  gap: 12px;
 }

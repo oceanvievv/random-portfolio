@@ -1,8 +1,5 @@
 -
   const projects = []
-  const baseDescr = 'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io';
-  const baseDemoLink = 'https://oceanvievv.github.io/random-404-page/'
-  const baseRepoLink = 'https://github.com/oceanvievv/random-404-page'
   const allTags = []
 
   class Project {
@@ -28,7 +25,9 @@
     }
 
     getFirstLetterUpperCaseTags(tags) {
-      const formattedTags = tags.map(tag => tag = capitalizeFirstLetter(tag))
+      const formattedTags = tags.map(function (tag) {
+        return capitalizeFirstLetter(tag)
+      })
 
       function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1)
@@ -38,7 +37,29 @@
     }
   }
 
-  projects.push(new Project('assets/images/404_screen.png', ['HTML', 'CSS', 'responsive'], '404 Not Found', baseDescr, baseDemoLink, baseRepoLink))
+  projects.push(new Project(
+    'assets/images/404_screen.png',
+    ['HTML', 'CSS', 'responsive'],
+    'The creative crew',
+    'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+    'https://oceanvievv.github.io/random-404-page/',
+    'https://github.com/oceanvievv/random-404-page'))
+
+  projects.push(new Project(
+          'assets/images/crew_screen.png',
+          ['HTML', 'CSS', 'responsive'],
+          'The creative crew',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-the-create-crew/',
+          'https://github.com/oceanvievv/random-the-create-crew'))
+
+  projects.push(new Project(
+          'assets/images/interior_screen.png',
+          ['HTML', 'CSS', 'responsive'],
+          'Interior consultant',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-interior-consultant/',
+          'https://github.com/oceanvievv/random-interior-consultant'))
 
   function getUniqueTags(allTags) {
     return allTags.filter((v, i, a) => a.indexOf(v) === i)
@@ -48,6 +69,7 @@
 
 include mixins/projectsFilterButton
 include mixins/projectsItem
+include mixins/pagination-arrows
 
 .projects-section-wrapper
   .projects-nav
@@ -55,5 +77,11 @@ include mixins/projectsItem
     .projects-nav__filters-wrapper
       for tag in uniqueTags
         +filterButton(tag)
-.projects-wrapper
-  +projectsItem(projects[0])
+  .projects-wrapper
+    for project in projects
+      +projectsItem(project)
+  //if projects.length > 1
+  .projects-pagination
+    .projects-pagination__controls
+      +pagination-arrows('left')
+      +pagination-arrows('right')
