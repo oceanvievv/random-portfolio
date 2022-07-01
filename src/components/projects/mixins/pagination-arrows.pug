@@ -1,8 +1,7 @@
-mixin pagination-arrows(direction)
+mixin paginationArrows(direction)
   if direction === 'left'
-    .projects-pagination__page-control-wrapper
-      //img(src='assets/icons/arrow.svg')
-      include ../icons/arrow
+    .projects-pagination__page-control-wrapper.projects-pagination__page-control-wrapper_left
+        include ../icons/arrow
   else if direction === 'right'
     .projects-pagination__page-control-wrapper
-      //img(src='assets/icons/arrow.svg')
+      include ../icons/arrow

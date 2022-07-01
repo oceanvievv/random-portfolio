@@ -1,5 +1,5 @@
 -
-  const projects = []
+  const allProjects = []
   const allTags = []
 
   class Project {
@@ -37,15 +37,15 @@
     }
   }
 
-  projects.push(new Project(
-    'assets/images/404_screen.png',
-    ['HTML', 'CSS', 'responsive'],
-    'The creative crew',
-    'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
-    'https://oceanvievv.github.io/random-404-page/',
-    'https://github.com/oceanvievv/random-404-page'))
+  allProjects.push(new Project(
+          'assets/images/404_screen.png',
+          ['HTML', 'CSS', 'responsive'],
+          '404 Not Found',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-404-page/',
+          'https://github.com/oceanvievv/random-404-page'))
 
-  projects.push(new Project(
+  allProjects.push(new Project(
           'assets/images/crew_screen.png',
           ['HTML', 'CSS', 'responsive'],
           'The creative crew',
@@ -53,7 +53,7 @@
           'https://oceanvievv.github.io/random-the-create-crew/',
           'https://github.com/oceanvievv/random-the-create-crew'))
 
-  projects.push(new Project(
+  allProjects.push(new Project(
           'assets/images/interior_screen.png',
           ['HTML', 'CSS', 'responsive'],
           'Interior consultant',
@@ -61,27 +61,86 @@
           'https://oceanvievv.github.io/random-interior-consultant/',
           'https://github.com/oceanvievv/random-interior-consultant'))
 
+  allProjects.push(new Project(
+          'assets/images/recipe_screen.png',
+          ['HTML', 'CSS', 'responsive'],
+          'Recipe page',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-recipe-page/',
+          'https://github.com/oceanvievv/random-recipe-page'))
+
+  allProjects.push(new Project(
+          'assets/images/my_gallery_screen.png',
+          ['HTML', 'CSS', 'responsive'],
+          'My gallery',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-my-gallery/',
+          'https://github.com/oceanvievv/random-my-gallery'))
+
+  allProjects.push(new Project(
+          'assets/images/checkout_page.png',
+          ['HTML', 'CSS', 'responsive'],
+          'Checkout page',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-checkout-page/',
+          'https://github.com/oceanvievv/random-checkout-page'))
+
+  allProjects.push(new Project(
+          'assets/images/edie_page.png',
+          ['HTML', 'CSS', 'responsive'],
+          'Edie homepage',
+          'In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io',
+          'https://oceanvievv.github.io/random-edie-homepage/',
+          'https://github.com/oceanvievv/random-edie-homepage'))
+
   function getUniqueTags(allTags) {
     return allTags.filter((v, i, a) => a.indexOf(v) === i)
   }
 
   const uniqueTags = getUniqueTags(allTags)
 
+  class PaginationController {
+    constructor(items, initPage) {
+      this.items = items
+      this.initPage = initPage
+      this.currPage = initPage
+      this.currItems = this.setItemsForCurrPage(this.currPage)
+      this.pagesCount = Math.ceil(items.length / 3)
+    }
+
+    setItemsForCurrPage(currPage) {
+      const lastItem = currPage * 3
+      const firstItem = lastItem - 3
+
+      return allProjects.slice(firstItem, lastItem)
+    }
+
+    setPage(page) {
+      this.currPage = page
+
+      this.setItemsForCurrPage(this.currPage)
+    }
+  }
+
+  const pagination = new PaginationController(allProjects, 1)
+
 include mixins/projectsFilterButton
 include mixins/projectsItem
 include mixins/pagination-arrows
+include mixins/pagination-page
 
 .projects-section-wrapper
   .projects-nav
-    .projects-nav__title Projects (#{projects.length})
+    .projects-nav__title Projects (#{allProjects.length}) #{pagination.currItems.firstItem} #{pagination.currItems.lastItem}
     .projects-nav__filters-wrapper
       for tag in uniqueTags
         +filterButton(tag)
   .projects-wrapper
-    for project in projects
+    for project in pagination.currItems
       +projectsItem(project)
-  //if projects.length > 1
-  .projects-pagination
-    .projects-pagination__controls
-      +pagination-arrows('left')
-      +pagination-arrows('right')
+  if allProjects.length > 1
+    .projects-pagination
+      .projects-pagination__controls
+        +paginationArrows('left')
+        +paginationPages(pagination.pagesCount)
+        +paginationArrows('right')

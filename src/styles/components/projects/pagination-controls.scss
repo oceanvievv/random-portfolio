@@ -1,0 +1,36 @@
+.projects-pagination__page-control-wrapper {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  border: 1px solid $button-border-color-base;
+  border-radius: $button-container-radius-s;
+
+  font-family: 'RobotoRegular', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+
+  user-select: none;
+
+  &_left {
+    transform: rotateY(180deg);
+  }
+
+  &:hover {
+    background-color: $background-color-blue;
+    border-color: transparent;
+
+    color: white;
+
+    svg {
+      fill: white;
+    }
+  }
+}
